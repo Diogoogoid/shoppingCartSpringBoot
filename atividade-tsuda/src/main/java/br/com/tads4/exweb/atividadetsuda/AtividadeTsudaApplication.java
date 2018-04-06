@@ -1,4 +1,4 @@
-package br.com.tads4.exweb.atividadetsuda.configuration;
+package br.com.tads4.exweb.atividadetsuda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

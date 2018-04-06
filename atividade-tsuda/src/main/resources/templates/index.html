@@ -611,16 +611,14 @@
 					</div>
 					<h4>Ultimos Produtos</h4>
 					<ul class="thumbnails">
-						<li class="span3">
+						<li class="span3" th:each="prod : ${produtos}">
 							<div class="thumbnail">
 								<a href="product_details.html">
-									<img src="themes/images/products/6.jpg" alt="" />
+									<img th:src="${prod.imagens[0].legenda}" alt="" />
 								</a>
 								<div class="caption">
-									<h5>STAR WARS - Lordes dos Siths</h5>
-									<p>
-										Lorem Ipsum is simply dummy text.
-									</p>
+									<h5 th:text="${prod.nome}"></h5>
+									<p th:text="${prod.descricao}"></p>
 
 									<h4 style="text-align:center">
 										<a class="btn" href="product_details.html">
@@ -629,117 +627,7 @@
 										<a class="btn btn-warning" href="#">Add ao
 											<i class="icon-shopping-cart"></i>
 										</a>
-										<a class="btn btn-view" href="#">$222.00</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a href="product_details.html">
-									<img src="themes/images/products/7.jpg" alt="" />
-								</a>
-								<div class="caption">
-									<h5>STAR WARS - Herdeiro do jedi</h5>
-									<p>
-										Lorem Ipsum is simply dummy text.
-									</p>
-									<h4 style="text-align:center">
-										<a class="btn" href="product_details.html">
-											<i class="icon-zoom-in"></i>
-										</a>
-										<a class="btn btn-warning" href="#">Add ao
-											<i class="icon-shopping-cart"></i>
-										</a>
-										<a class="btn btn-view" href="#">$222.00</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a href="product_details.html">
-									<img src="themes/images/products/8.jpg" alt="" />
-								</a>
-								<div class="caption">
-									<h5>STAR WARS - BATTLEFRONT</h5>
-									<p>
-										Lorem Ipsum is simply dummy text.
-									</p>
-									<h4 style="text-align:center">
-										<a class="btn" href="product_details.html">
-											<i class="icon-zoom-in"></i>
-										</a>
-										<a class="btn btn-warning" href="#">Add ao
-											<i class="icon-shopping-cart"></i>
-										</a>
-										<a class="btn btn-view" href="#">$222.00</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a href="product_details.html">
-									<img src="themes/images/products/9.jpg" alt="" />
-								</a>
-								<div class="caption">
-									<h5>STAR WARS - Kenobi</h5>
-									<p>
-										Lorem Ipsum is simply dummy text.
-									</p>
-									<h4 style="text-align:center">
-										<a class="btn" href="product_details.html">
-											<i class="icon-zoom-in"></i>
-										</a>
-										<a class="btn btn-warning" href="#">Add ao
-											<i class="icon-shopping-cart"></i>
-										</a>
-										<a class="btn btn-view" href="#">$222.00</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a href="product_details.html">
-									<img src="themes/images/products/10.jpg" alt="" />
-								</a>
-								<div class="caption">
-									<h5>Captães da areia</h5>
-									<p>
-										Lorem Ipsum is simply dummy text.
-									</p>
-									<h4 style="text-align:center">
-										<a class="btn" href="product_details.html">
-											<i class="icon-zoom-in"></i>
-										</a>
-										<a class="btn btn-warning" href="#">Add ao
-											<i class="icon-shopping-cart"></i>
-										</a>
-										<a class="btn btn-view" href="#">$222.00</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3">
-							<div class="thumbnail">
-								<a href="product_details.html">
-									<img src="themes/images/products/11.jpg" alt="" />
-								</a>
-								<div class="caption">
-									<h5>O pequeno príncipe</h5>
-									<p>
-										Lorem Ipsum is simply dummy text.
-									</p>
-									<h4 style="text-align:center">
-										<a class="btn" href="product_details.html">
-											<i class="icon-zoom-in"></i>
-										</a>
-										<a class="btn btn-warning" href="#">Add ao
-											<i class="icon-shopping-cart"></i>
-										</a>
-										<a class="btn btn-view" href="#">$222.00</a>
+                                                                            <a class="btn btn-view" href="#">R$ <span th:text="${prod.precoVenda}"></span></a>
 									</h4>
 								</div>
 							</div>
