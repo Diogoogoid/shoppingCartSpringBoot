@@ -86,31 +86,6 @@
                             <li class="">
                                 <a href="contact.html">Contato</a>
                             </li>
-                            <li class="">
-                                <a href="#login" role="button" data-toggle="modal" style="padding-right:0">
-                                    <span class="visible-desktop btn btn-large btn-outline-warning">Login</span>
-                                    <span class="visible-phone visible-tablet btn btn-large btn-outline-warning" style="margin-top:10px">Login</span>
-                                </a>
-                                <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        <h3>Login</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="form-horizontal loginFrm">
-                                            <div class="control-group">
-                                                <input type="text" id="inputEmail" placeholder="Email">
-                                            </div>
-                                            <div class="control-group">
-                                                <input type="password" id="inputPassword" placeholder="Senha">
-                                            </div>
-
-                                        </form>
-                                        <button type="submit" class="btn btn-view">Entrar</button>
-                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -171,14 +146,16 @@
                             <div class="span6">
                                 <h3 th:text="${prod.nome}">Teste </h3>
                                 <hr class="soft" />
-                                <form class="form-horizontal qtyFrm" th:action="@{/summary}" method="post">
+                                <form class="form-horizontal qtyFrm" th:action="@{/sessao}" method="post">
                                     <div class="control-group">
                                         <label class="control-label">
                                             <span>R$ <span th:text="${prod.precoVenda}"></span></span>
                                         </label>
                                         <div class="controls">
                                             <input type="number" class="span1" placeholder="Quantidade" />
-                                            <input type="hidden"  value="${prod.id}" name="idProd" th:value="${@summaryController.idProd}"/>
+                                            <!-- <input type="hidden" value="${prod.id}" name="prodId" /> -->
+                                            <label th:text="${prod.id}"></label>
+                                            <input type="hidden"  name="prodId" value="${prod.id}" th:text="${prod.id}"/>
                                             <button type="submit" class="btn btn-large btn-view pull-right"> Adicionar ao carrinho
                                                 <i class=" icon-shopping-cart"></i>
                                             </button>
